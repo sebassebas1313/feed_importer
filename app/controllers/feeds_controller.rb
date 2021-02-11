@@ -3,7 +3,7 @@ class FeedsController < ActionController::Base
     # https://theaussieenglishpodcast.podigee.io/feed/mp3
     link = params[:link]
 
-    # Importers::RssFeed.new.call(link)
+    Importers::RssFeed.new.call(link)
     render status: :ok, json: { message: 'import successfully' }
   rescue StandardError => _e
     # ideally log error with e.message
