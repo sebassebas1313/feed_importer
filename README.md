@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RSS parser with Jira. 
 
-Things you may want to cover:
+This sample exposes a endpoint `/feeds/import` that expects a param `link`. The endpoint expects a valid rss link,
+parses it and stores podcast and related episodes information. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

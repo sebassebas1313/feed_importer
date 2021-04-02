@@ -3,14 +3,14 @@
 module Importers
   class RssFeed
 
-    attr_accessor :link
-
     def call(link)
       @link = link
       body_response = HTTParty.get(@link).body
       podigee_feed = Feedjira.parse(body_response)
 
       # In order to keep db consistency
+      # Not valid for long parses since it blocks db
+      # Ideally creates validation class to test if passed body holds all necessary fields
       ActiveRecord::Base.transaction do
       podcast = create_podcast(podigee_feed)
       create_episode(podcast, podigee_feed)

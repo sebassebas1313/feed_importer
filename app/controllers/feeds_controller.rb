@@ -1,6 +1,5 @@
 class FeedsController < ActionController::Base
   def import
-    # https://theaussieenglishpodcast.podigee.io/feed/mp3
     link = params[:link]
 
     Importers::RssFeed.new.call(link)
